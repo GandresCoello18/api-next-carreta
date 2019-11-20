@@ -1,0 +1,24 @@
+{
+    "name": "Api-carreta",
+    "alias": "api-carreta-alias.now.sh",
+    "version": 2,
+    "builds": [{"src": "index.js", "use": "@now/node"}],
+    "routes": [
+        {
+            "src": "/(.*)",
+             "dest": "/index.js",
+             "methods": ["POST", "GET", "PUT", "DELETE"],
+             "headers": {
+                 "Access-Control-Allow-Origin": "_",
+                 "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+                 "Access-Control-Allow-Credentials": "true"
+             }     
+        }
+    ],
+    "env":{
+        "DB_USER": "@db-api-carreta-user",
+        "DB_PASSWORD": "@db-api-carreta-password",
+        "DB_HOST": "@db-api-carreta-host",
+        "DB_NAME": "@db-api-carreta-name"
+    }
+}
