@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const Model = require('./modelo-user');
 
 router.get('/', function(req, res) {
-    const filtrar_user = req.query.user || null;
+    const filtrar_user = req.query.id || null;
     const correo_valid = req.query.correo || null;
     const clave_valid = req.query.clave || null;
     

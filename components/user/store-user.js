@@ -9,7 +9,7 @@ function addUser(user){
 async function listar_user(filtrar_user){
     let filter = {};
     if(filtrar_user !== null){
-        filter = { name: filtrar_user }
+        filter = { _id: filtrar_user }
     }
     /*Promise.resolve(Model.modelo_user.find({ $and: [ {clave: "rottweilas11"}, {correo: "goyeselcoca@gmail.com"}] }))
         .then( data => {
