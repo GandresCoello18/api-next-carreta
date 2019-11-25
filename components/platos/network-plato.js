@@ -46,7 +46,7 @@ router.post('/', upload.single('imagen'), function(req, res) {
     
     console.log(req.body.name + ' ' + req.file.path + ' ' + req.body.precio + ' ' + req.body.ranking + ' ' + req.body.tipo);
     
-    controller.addPlato(req.body.name, req.file, req.body.precio, req.body.ranking, req.body.tipo)
+    controller.addPlato(req.body.name, req.file.path, req.body.precio, req.body.ranking, req.body.tipo)
         .then( (data) => {
             response.success(req, res, data, 200);
         })
