@@ -9,8 +9,8 @@ data_base();
 var app = express();
 
 //app.use(router);
+app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json({extended: false}));
-
 router(app);
 
 app.use(cors());

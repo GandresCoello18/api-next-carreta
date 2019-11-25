@@ -7,16 +7,26 @@ const controller = require('./controller-plato');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, __dirname + '/uploads')
+      cb(null, path.join(__dirname, '/uploads/'))
     },
     filename: function (req, file, cb) {
       cb(null, new Date().getTime() + '-' + file.originalname) //Appending extension
     }
   })
 
+  const fileFilter = (req, file, cb) => {
+    // reject a file
+    if ( file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+      cb(null, true);
+    } else {
+      cb(null, false);
+    }
+  };
+
 const upload = multer({
     storage: storage,
-    limits: {fileSize: 1024 * 1024 * 5}
+    limits: {fileSize: 1024 * 1024 * 5},
+    fileFilter: fileFilter
 });
 
 router.get('/', function(req, res) {
@@ -34,7 +44,7 @@ router.get('/', function(req, res) {
 
 router.post('/', upload.single('imagen'), function(req, res) {
     
-    console.log(req.body.name + ' ' + req.file + ' ' + req.body.precio + ' ' + req.body.ranking + ' ' + req.body.tipo);
+    console.log(req.body.name + ' ' + req.file.path + ' ' + req.body.precio + ' ' + req.body.ranking + ' ' + req.body.tipo);
     
     controller.addPlato(req.body.name, req.file, req.body.precio, req.body.ranking, req.body.tipo)
         .then( (data) => {
