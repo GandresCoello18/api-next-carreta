@@ -7,7 +7,7 @@ const controller = require('./controller-plato');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, './uploads')
+      cb(null, __dirname + '/uploads')
     },
     filename: function (req, file, cb) {
       cb(null, new Date().getTime() + '-' + file.originalname) //Appending extension
