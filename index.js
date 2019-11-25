@@ -14,7 +14,7 @@ app.use(bodyParser.json({extended: false}));
 router(app);
 
 app.use(cors());
-app.use('/app', express.static('public/otro.php'));
+//app.use('/app', express.static('public/otro.php'));
 //app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen( config.port || 9000);
