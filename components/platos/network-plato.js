@@ -7,15 +7,16 @@ const controller = require('./controller-plato');
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, 'uploads/')
+      cb(null, './uploads')
     },
     filename: function (req, file, cb) {
-      cb(null, Date.now() + path.extname(file.originalname)) //Appending extension
+      cb(null, new Date().getTime() + '-' + file.originalname) //Appending extension
     }
   })
 
 const upload = multer({
-    storage: storage
+    storage: storage,
+    limits: {fileSize: 1024 * 1024 * 5}
 });
 
 router.get('/', function(req, res) {
