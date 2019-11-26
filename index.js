@@ -10,6 +10,7 @@ var app = express();
 
 //app.use(router);
 app.use('/uploads', express.static('uploads'));
+app.use('/public', express.static('public/files'));
 app.use(bodyParser.json({extended: false}));
 router(app);
 
