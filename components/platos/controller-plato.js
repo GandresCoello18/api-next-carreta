@@ -1,13 +1,13 @@
 const store = require('./store-plato');
 
-function addPlato(name, imagen, precio, ranking, tipo){
+function addPlato(name, file, precio, ranking, tipo){
 
-    if(!name || !imagen || !precio || !ranking || !tipo){
+    if(!name || !file || !precio || !ranking || !tipo){
         return Promise.reject('Ocurrio un error, name invalid');
     }
 
     let fileUrl = '';
-    if(imagen){
+    if(file){
         fileUrl = 'https://api-carreta.now.sh/upload/'+ imagen.filename;
     }
 
