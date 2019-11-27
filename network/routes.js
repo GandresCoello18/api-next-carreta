@@ -5,6 +5,7 @@ const chat = require('../components/chat/network-chat');
 const login = require('../components/login/network-login');
 const plato = require('../components/platos/network-plato');
 const reservacion_eventos = require('../components/reservaciones/network-reservaciones');
+const imagenes = require('../components/imagenes/network-img');
 
 const route = function(server){
 	server.use('/mensaje', mensaje);
@@ -13,6 +14,7 @@ const route = function(server){
 	server.use('/login', login);
 	server.use('/plato', plato);
 	server.use('/reservaciones', reservacion_eventos);
+	server.use('/imagenes', imagenes)
 }
 
 module.exports = route;

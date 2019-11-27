@@ -8,7 +8,7 @@ function addPlato(name, file, precio, ranking, tipo){
 
     let fileUrl = '';
     if(file){
-        fileUrl = 'https://api-carreta.now.sh/upload/'+ imagen.filename;
+        fileUrl = 'https://api-carreta-kwhs9h0ye.now.sh/imagenes/'+ imagen.filename;
     }
 
     const plato = {

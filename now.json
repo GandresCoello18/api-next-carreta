@@ -2,7 +2,19 @@
     "name": "Api-carreta",
     "alias": "api-carreta-alias.now.sh",
     "version": 2,
-    "builds": [{"src": "index.js", "use": "@now/node"}],
+    "builds": [
+        {
+            "src": "index.js", "use": "@now/node"
+        },
+        {
+            "src": "config/**",
+            "use": "@now/static"
+        },
+        {
+            "src": "./public/files",
+            "use": "@now/static"
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
