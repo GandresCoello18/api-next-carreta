@@ -30,7 +30,7 @@ const upload = multer({
 });
 
 router.get('/', function(req, res) {
-    const unico_plato = req.query.plato || null;
+    const unico_plato = req.query.id || null;
 
     controller.mostrar_platos(unico_plato)
         .then( data => {
