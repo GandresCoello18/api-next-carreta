@@ -41,6 +41,19 @@ router.get('/', function(req, res) {
         })
 })
 
+router.get('/:recomendacion', function(req, res){
+  const id_plato_no_recomendado = req.params.recomendacion;
+  console.log(id_plato_no_recomendado);
+
+  controller.mostrar_recomendado(id_plato_no_recomendado)
+    .then( data => {
+      response.success(req, res, data, 200);
+    })
+    .catch( error => {
+      response.error(req, res,'Error en mostrar recomendado', 500, error)
+    })
+})
+
 
 router.post('/', upload.single('file'), function(req, res) {
     

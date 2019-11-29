@@ -15,7 +15,12 @@ async function listar_plato(filtrar_plato){
     return usuarios;
 }
 
+async function listar_recomendado(id_omitido){
+    return await Model.modelo_platos.find( { _id: { $ne: id_omitido } } );
+}
+
 module.exports = {
     add: addPlato,
-    list: listar_plato
+    list: listar_plato,
+    listar_recomendado
 }

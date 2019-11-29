@@ -6,7 +6,8 @@ const mySchema = new Schema({
     fileUrl: String,
     precio: String,
     ranking: String,
-    tipo: String
+    tipo: String,
+    descripcion: String
 });
 
 const model = mongoose.model('platos', mySchema);
