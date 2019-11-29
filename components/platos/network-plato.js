@@ -43,7 +43,6 @@ router.get('/', function(req, res) {
 
 router.get('/:recomendacion', function(req, res){
   const id_plato_no_recomendado = req.params.recomendacion;
-  console.log(id_plato_no_recomendado);
 
   controller.mostrar_recomendado(id_plato_no_recomendado)
     .then( data => {

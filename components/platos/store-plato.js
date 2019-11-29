@@ -16,7 +16,7 @@ async function listar_plato(filtrar_plato){
 }
 
 async function listar_recomendado(id_omitido){
-    return await Model.modelo_platos.find( { _id: { $ne: id_omitido } } );
+    return await Model.modelo_platos.find( { _id: { $ne: id_omitido } } ).limit(3);
 }
 
 module.exports = {
