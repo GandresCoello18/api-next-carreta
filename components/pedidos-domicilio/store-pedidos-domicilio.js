@@ -14,6 +14,7 @@ async function listar_pedidos(filtrar_pedido){
         }
         Model.modelo_pedidos.find(filter)
             .populate('usuarios')
+            .populate('platos')
             .exec( ( err, populatedata ) => {
                 if(err){ 
                     reject(err); 

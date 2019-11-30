@@ -20,7 +20,7 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
 
-    controller.addPedidos(req.body.usuario, req.body.cantidad, req.body.direccion, req.body.latitud, req.body.longitud)
+    controller.addPedidos(req.body.usuario, req.body.plato, req.body.cantidad, req.body.direccion, req.body.latitud, req.body.longitud)
         .then( (data) => {
             response.success(req, res, data, 200);
         })

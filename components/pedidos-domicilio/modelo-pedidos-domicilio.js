@@ -6,6 +6,10 @@ const mySchema = new Schema({
         type: Schema.ObjectId,
         ref: 'usuarios'
     },
+    platos:{
+        type: Schema.ObjectId,
+        ref: 'platos'
+    },
     cantidad: Number,
     direccion: String,
     latitud: String,

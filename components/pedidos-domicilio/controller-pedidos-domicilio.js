@@ -1,8 +1,8 @@
 const store = require('./store-pedidos-domicilio');
 
-function addPedidos(usuarios, cantidad, direccion, latitud, longitud){
+function addPedidos(usuarios, platos, cantidad, direccion, latitud, longitud){
 
-    if(!usuarios || !cantidad || !direccion || !latitud || !longitud){
+    if(!usuarios || !platos || !cantidad || !direccion || !latitud || !longitud){
         return Promise.reject('Ocurrio un error, name invalid');
     }
     
@@ -13,6 +13,7 @@ function addPedidos(usuarios, cantidad, direccion, latitud, longitud){
 
     const pedidos = {
         usuarios,
+        platos,
         cantidad,
         direccion,
         latitud,
