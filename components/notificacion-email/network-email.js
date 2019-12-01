@@ -31,8 +31,8 @@ router.get('/', function(req, res) {
 
 
 router.post('/', function(req, res) {
-
-    controller.addEmail(req.body.email, os.userInfo(), os.networkInterfaces().Ethernet.map(i => i.address))
+// info SISTEMA OPERATIVO os.userInfo(), os.networkInterfaces().Ethernet.map(i => i.address)
+    controller.addEmail(req.body.email)
         .then( (data) => {
             response.success(req, res, data, 200);
         })

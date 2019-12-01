@@ -1,15 +1,13 @@
 const store = require('./store-email');
 
-function addEmail(email, info, ip){
+function addEmail(email){
 
-    if(!email || !info || !ip){
+    if(!email){
         return Promise.reject('Ocurrio un error, name invalid');
     }
 
     const notificaciones = {
-        email,
-        info,
-        ip
+        email
     };
     return store.add(notificaciones);
 }
