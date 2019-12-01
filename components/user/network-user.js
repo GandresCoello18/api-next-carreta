@@ -5,6 +5,18 @@ const controller = require('./controller-user');
 const bcrypt = require('bcrypt');
 const Model = require('./modelo-user');
 
+router.get('/:valorItem', function(req, res) {
+    const valor = req.params.valorItem || null;
+
+    controller.get_Params(valor)
+        .then( data => {
+            response.success(req, res, data, 200);
+        })
+        .catch( e => {
+            response.error(req, res, 'ocurrio un error al mostrar user', 500, e);
+        });
+})
+
 router.get('/', function(req, res) {
     const filtrar_user = req.query.id || null;
     const correo_valid = req.query.correo || null;
@@ -14,18 +26,13 @@ router.get('/', function(req, res) {
 
         Model.modelo_user.find( {correo: correo_valid} )
             .then( valor => {
-                console.log(valor.length == 0);
-                console.log(valor.length != 0);
                 if(valor.length != 0){
-console.log('entro');
                     bcrypt.compare(clave_valid, valor[0].clave)
                         .then( confimar => {
-                            console.log(confimar);
                             if(confimar == true){
                                 controller.validar_user(correo_valid, valor[0].clave)
                                     .then( data => {
                                         response.success(req, res, data, 200);
-                                            console.log(data);
                                     })
                                     .catch( e => {
                                         response.error(req, res, 'ocurrio un error al validar user', 500, e);

@@ -11,10 +11,6 @@ async function listar_user(filtrar_user){
     if(filtrar_user !== null){
         filter = { _id: filtrar_user }
     }
-    /*Promise.resolve(Model.modelo_user.find({ $and: [ {clave: "rottweilas11"}, {correo: "goyeselcoca@gmail.com"}] }))
-        .then( data => {
-            console.log(data);
-        })*/
     const usuarios = await Model.modelo_user.find(filter);
     return usuarios;
 }
@@ -24,8 +20,13 @@ async function validar_user(correo, clave){
     return validar_user;
 }
 
+async function params_user(valor){
+    return await Model.modelo_user.find( { correo: valor } );
+}
+
 module.exports = {
     add: addUser,
     list: listar_user,
-    validar: validar_user
+    validar: validar_user,
+    parametro: params_user
 }

@@ -5,6 +5,17 @@ const response = require('../../network/response');
 const controller = require('./controller-email');
 const os = require('os');
 
+router.get('/:valorItem', function(req, res) {
+    const valor = req.params.valorItem;
+
+    controller.get_params(valor)
+        .then( (data) => {
+            response.success(req, res, data, 200);
+        })
+        .catch( e => {
+            response.error(req, res, 'Ocurrio un error al añadir email', 500, e);
+        })
+})
 
 router.get('/', function(req, res) {
     const unico = req.query.id || null;

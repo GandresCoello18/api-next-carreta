@@ -15,7 +15,12 @@ async function listar_email(filtrar_email){
     return correo;
 }
 
+async function params_get(valor){
+    return await Model.modelo_email.find( { email: valor } );
+}
+
 module.exports = {
     add: addEmail,
-    list: listar_email
+    list: listar_email,
+    parametros: params_get
 }

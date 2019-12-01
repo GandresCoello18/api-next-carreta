@@ -32,8 +32,15 @@ function validar_user(correo, clave){
     })
 }
 
+function get_Params(valor){
+    return new Promise( (resolve, reject) => {
+        resolve(store.parametro(valor));
+    })
+}
+
 module.exports = {
     addUser,
     getUsuario, 
-    validar_user
+    validar_user,
+    get_Params
 }

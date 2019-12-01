@@ -20,7 +20,14 @@ function mostrar_email(filtrar_email){
     })
 }
 
+function get_params(valor){
+    return new Promise( (resolve, reject) => {
+        resolve(store.parametros(valor));
+    })
+}
+
 module.exports = {
     addEmail,
-    mostrar_email
+    mostrar_email,
+    get_params
 }
