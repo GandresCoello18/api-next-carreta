@@ -7,6 +7,7 @@ const plato = require('../components/platos/network-plato');
 const reservacion_eventos = require('../components/reservaciones/network-reservaciones');
 const imagenes = require('../components/imagenes/network-img');
 const pedidos = require('../components/pedidos-domicilio/network-pedidos-domicilio');
+const email = require('../components/notificacion-email/network-email');
 
 const route = function(server){
 	server.use('/mensaje', mensaje);
@@ -17,6 +18,7 @@ const route = function(server){
 	server.use('/reservaciones', reservacion_eventos);
 	server.use('/imagenes', imagenes);
 	server.use('/pedidos', pedidos);
+	server.use('/email', email);
 }
 
 module.exports = route;
