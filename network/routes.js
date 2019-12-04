@@ -8,6 +8,7 @@ const reservacion_eventos = require('../components/reservaciones/network-reserva
 const imagenes = require('../components/imagenes/network-img');
 const pedidos = require('../components/pedidos-domicilio/network-pedidos-domicilio');
 const email = require('../components/notificacion-email/network-email');
+const enviar_email = require('../components/enviar-email/network-enviar');
 
 const route = function(server){
 	server.use('/mensaje', mensaje);
@@ -19,6 +20,7 @@ const route = function(server){
 	server.use('/imagenes', imagenes);
 	server.use('/pedidos', pedidos);
 	server.use('/email', email);
+	server.use('/enviar-email', enviar_email);
 }
 
 module.exports = route;
