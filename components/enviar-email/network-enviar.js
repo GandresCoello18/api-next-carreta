@@ -11,7 +11,6 @@ router.get('/', function(req, res) {
 
     controller.mostrar_email(unico, todos_email)
         .then( data => {
-            console.log(data[0].email);
             response.success(req, res, data, 200);
         })
         .catch( error => {

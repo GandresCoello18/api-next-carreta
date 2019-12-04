@@ -9,6 +9,7 @@ exports.sendEmail = function(direccion, servicio, extencion, req, res ){
             host: 'smtp.gmail.com',
             port: 465,
             secure: true, // use SSL
+            service: 'gmail',
             auth: {
                 user: 'goyeselcoca@gmail.com',
                 pass: 'realg4life10'
