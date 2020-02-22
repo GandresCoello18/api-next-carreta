@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const response = require('../../network/response');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
 
 router.get('/', function(req, res) {
     res.json({

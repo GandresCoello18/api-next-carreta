@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const response = require('../../network/response');
 const controller = require('./controller-user');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const Model = require('./modelo-user');
 
 router.get('/:valorItem', function(req, res) {
