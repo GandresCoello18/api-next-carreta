@@ -12,7 +12,7 @@ exports.sendEmail = function(direccion, servicio, extencion, req, res ){
             service: 'gmail',
             auth: {
                 user: 'goyeselcoca@gmail.com',
-                pass: 'realg4life10'
+                pass: '*********'
             }
         });        
     }else if(servicio == 'outlook'){
@@ -26,7 +26,7 @@ exports.sendEmail = function(direccion, servicio, extencion, req, res ){
             service: 'Outlook',
             auth: {
                 user: 'alexanderbajana99@outlook.es',
-                pass: 'alexander1999'
+                pass: '*********'
             }
         });
     }else if(servicio == 'hotmail'){
